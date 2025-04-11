@@ -378,6 +378,12 @@ footer aside {
   display: inline-block;
 
 }
+.contenedor-filtros > .filtro-input,
+.contenedor-filtros > .filtro-label {
+  flex: 0 0 auto;
+}
+
+
 
 .filtro-input {
   display: none;
@@ -404,6 +410,7 @@ footer aside {
   grid-auto-rows: 10px;
   gap: 1.5em;
   margin: 20px;
+  flex-basis: 100%;
 }
 
 .clase {
