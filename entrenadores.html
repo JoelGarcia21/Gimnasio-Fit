@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio Fit | Entrenadores!</title>
+    <link rel="stylesheet" href="/assets/Styles/styles.css">
+</head>
+
+<body>
+    <!-- Menu -->
+    <header>
+        <nav class="mega-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="clases.html">Clases</a></li>
+                <li><a href="entrenadores.html">Entrenadores</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="contacto.html">Contactenos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#" id="modo-toggle" onclick="toggleDarkMode()">Modo Oscuro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="entrenadores-container">
+        <h1>Nuestros Entrenadores</h1>
+
+        <!-- Tarjetas Flip -->
+        <div class="entrenadores-grid">
+            <!-- Entrenador 1 -->
+            <div class="entrenador-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/assets/images/en1.jpg" alt="Marco Rodríguez">
+                        <h3>Marco Rodríguez</h3>
+                        <p>Especialista en CrossFit</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Marco Rodríguez</h3>
+                        <div class="habilidades">
+                            <div class="habilidad">
+                                <span>Fuerza</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 90%;" data-nivel="90%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidad">
+                                <span>Flexibilidad</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 80%;" data-nivel="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="estrellas" data-rating="4.5">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrenador 2 -->
+            <div class="entrenador-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/assets/images/en2.jpg" alt="Ana López">
+                        <h3>Ana López</h3>
+                        <p>Instructora de Yoga</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Ana López</h3>
+                        <div class="habilidades">
+                            <div class="habilidad">
+                                <span>Flexibilidad</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 95%;" data-nivel="95%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidad">
+                                <span>Meditación</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 85%;" data-nivel="85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="estrellas" data-rating="5">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrenador 3 -->
+            <div class="entrenador-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/assets/images/en3.jpg" alt="Carlos Mendez">
+                        <h3>Carlos Mendez</h3>
+                        <p>Especialista en Musculación</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Carlos Mendez</h3>
+                        <div class="habilidades">
+                            <div class="habilidad">
+                                <span>Fuerza</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 97%;" data-nivel="97%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidad">
+                                <span>Resistencia</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 88%;" data-nivel="88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="estrellas" data-rating="4">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrenador 4 -->
+            <div class="entrenador-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/assets/images/en4.jpg" alt="Luisa García">
+                        <h3>Luisa García</h3>
+                        <p>Instructora de Spinning</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Luisa García</h3>
+                        <div class="habilidades">
+                            <div class="habilidad">
+                                <span>Resistencia</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 92%;" data-nivel="92%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidad">
+                                <span>Motivación</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 90%;" data-nivel="90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="estrellas" data-rating="4.5">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrenador 5 -->
+            <div class="entrenador-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/assets/images/en5.jpg" alt="Javier Ruiz">
+                        <h3>Javier Ruiz</h3>
+                        <p>Entrenador Funcional</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Javier Ruiz</h3>
+                        <div class="habilidades">
+                            <div class="habilidad">
+                                <span>Agilidad</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 89%;" data-nivel="89%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidad">
+                                <span>Técnica</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 93%;" data-nivel="93%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="estrellas" data-rating="4">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrenador 6 -->
+            <div class="entrenador-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/assets/images/en6.jpg" alt="Sofía Chen">
+                        <h3>Sofía Chen</h3>
+                        <p>Especialista en Pilates</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Sofía Chen</h3>
+                        <div class="habilidades">
+                            <div class="habilidad">
+                                <span>Control Corporal</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 94%;" data-nivel="94%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidad">
+                                <span>Precisión</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 96%;" data-nivel="96%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="estrellas" data-rating="4.5">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrenador 7 -->
+            <div class="entrenador-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/assets/images/en7.jpg" alt="Diego Morales">
+                        <h3>Diego Morales</h3>
+                        <p>Entrenador de Boxeo</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Diego Morales</h3>
+                        <div class="habilidades">
+                            <div class="habilidad">
+                                <span>Velocidad</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 91%;" data-nivel="91%"></div>
+                                </div>
+                            </div>
+                            <div class="habilidad">
+                                <span>Coordinación</span>
+                                <div class="barra-container">
+                                    <div class="barra-habilidad" style="width: 87%;" data-nivel="87%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="estrellas" data-rating="4">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Pie de página -->
+    <footer>
+        <aside class="newsletter">
+            <form>
+                <label for="email">Suscribite:</label>
+                <input type="email" id="email" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </aside>
+        <aside class="redes">
+            <h1>Siguenos en: </h1>
+            <a href="https://instagram.com">. Instagram</a>
+            <a href="https://www.facebook.com/">. Facebook</a>
+        </aside>
+        <aside class="mapa">
+            <iframe src="https://www.openstreetmap.org/export/embed.html" width="300" height="200"></iframe>
+        </aside>
+    </footer>
+</body>
+<script>
+    function toggleDarkMode() {
+        const body = document.body;
+        const link = document.getElementById('modo-toggle');
+
+        body.classList.toggle('dark-mode');
+
+        link.textContent = body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+    }
+</script>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio Fit | Clases</title>
+    <link rel="stylesheet" href="/assets/Styles/styles.css">
+</head>
+
+<body>
+    <!-- Menu -->
+    <header>
+        <nav class="mega-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="clases.html">Clases</a></li>
+                <li><a href="entrenadores.html">Entrenadores</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="contacto.html">Contactenos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#" id="modo-toggle" onclick="toggleDarkMode()">Modo Oscuro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <!-- Filtros -->
+        <div class="filtros">
+
+            <div class="contenedor-filtros">
+                <input type="radio" name="filtro" id="todos" class="filtro-input" checked>
+                <label for="todos" class="filtro-label">Todas</label>
+
+                <input type="radio" name="filtro" id="musculacion" class="filtro-input">
+                <label for="musculacion" class="filtro-label">Musculación</label>
+
+                <input type="radio" name="filtro" id="crossfit" class="filtro-input">
+                <label for="crossfit" class="filtro-label">CrossFit</label>
+
+                <input type="radio" name="filtro" id="yoga" class="filtro-input">
+                <label for="yoga" class="filtro-label">Yoga</label>
+
+                <input type="radio" name="filtro" id="spinning" class="filtro-input">
+                <label for="spinning" class="filtro-label">Spinning</label>
+                <!-- Galería Masonry -->
+                <div class="galeria">
+                    <!-- Musculación -->
+                    <div class="clase" data-categoria="musculacion">
+                        <img src="/assets/images/mus1.jpg" alt="Musculación">
+                        <div class="clase-info">
+                            <h3>Musculación</h3>
+                            <p>Desarrolla fuerza y masa muscular con nuestros equipos profesionales.</p>
+                        </div>
+                    </div>
+
+                    <!-- CrossFit -->
+                    <div class="clase" data-categoria="crossfit">
+                        <img src="/assets/images/cross.jpeg" alt="CrossFit">
+                        <div class="clase-info">
+                            <h3>CrossFit</h3>
+                            <p>Entrenamiento funcional de alta intensidad.</p>
+                        </div>
+                    </div>
+
+                    <!-- Yoga -->
+                    <div class="clase" data-categoria="yoga">
+                        <img src="/assets/images/yoga.jpg" alt="Yoga">
+                        <div class="clase-info">
+                            <h3>Yoga</h3>
+                            <p>Mejora tu flexibilidad y reduce el estrés.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spinning -->
+                    <div class="clase" data-categoria="spinning">
+                        <img src="assets/images/spin.jpg" alt="Spinning">
+                        <div class="clase-info">
+                            <h3>Spinning</h3>
+                            <p>Quema calorías con nuestras clases de ciclismo indoor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Más clases... -->
+                    <div class="clase" data-categoria="musculacion">
+                        <img src="/assets/images/musa.jpg" alt="Musculación Avanzada">
+                        <div class="clase-info">
+                            <h3>Musculación Avanzada</h3>
+                            <p>Para aquellos que buscan llevar su físico al siguiente nivel.</p>
+                        </div>
+                    </div>
+
+                    <div class="clase" data-categoria="crossfit">
+                        <img src="/assets/images/crossa.jpg" alt="CrossFit Avanzado">
+                        <div class="clase-info">
+                            <h3>CrossFit Avanzado</h3>
+                            <p>Desafía tus límites con nuestros WODs expertos.</p>
+                        </div>
+                    </div>
+
+                    <div class="clase" data-categoria="yoga">
+                        <img src="/assets/images/yogaa.jpeg" alt="Yoga Restaurativo">
+                        <div class="clase-info">
+                            <h3>Yoga Restaurativo</h3>
+                            <p>Relajación profunda y estiramientos suaves.</p>
+                        </div>
+                    </div>
+
+                    <div class="clase" data-categoria="spinning">
+                        <img src="assets/images/spina.jpg" alt="Spinning Intenso">
+                        <div class="clase-info">
+                            <h3>Spinning Intenso</h3>
+                            <p>Sesiones de alta intensidad para resultados rápidos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Horarios -->
+        <div class="horarios">
+            <h2>Horarios Semanales</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                        <th>Sábado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00</td>
+                        <td>Yoga</td>
+                        <td>Spinning</td>
+                        <td>Yoga</td>
+                        <td>Spinning</td>
+                        <td>Yoga</td>
+                        <td>CrossFit</td>
+                    </tr>
+                    <tr>
+                        <td>10:00</td>
+                        <td>Musculación</td>
+                        <td>CrossFit</td>
+                        <td>Musculación</td>
+                        <td>CrossFit</td>
+                        <td>Musculación</td>
+                        <td>Spinning</td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td colspan="6">Almuerzo</td>
+                    </tr>
+                    <tr>
+                        <td>16:00</td>
+                        <td>CrossFit</td>
+                        <td>Musculación</td>
+                        <td>CrossFit</td>
+                        <td>Musculación</td>
+                        <td>CrossFit</td>
+                        <td>Yoga</td>
+                    </tr>
+                    <tr>
+                        <td>18:00</td>
+                        <td>Spinning</td>
+                        <td>Yoga</td>
+                        <td>Spinning</td>
+                        <td>Yoga</td>
+                        <td>Spinning</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>20:00</td>
+                        <td>Musculación</td>
+                        <td>CrossFit</td>
+                        <td>Musculación</td>
+                        <td>CrossFit</td>
+                        <td>Musculación</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+    <!-- Pie de página -->
+    <footer>
+        <aside class="newsletter">
+            <form>
+                <label for="email">Suscribite:</label>
+                <input type="email" id="email" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </aside>
+        <aside class="redes">
+            <h1>Siguenos en: </h1>
+            <a href="https://instagram.com">. Instagram</a>
+            <a href="https://www.facebook.com/">. Facebook</a>
+        </aside>
+        <aside class="mapa">
+            <iframe src="https://www.openstreetmap.org/export/embed.html" width="300" height="200"></iframe>
+        </aside>
+    </footer>
+</body>
+<script>
+    function toggleDarkMode() {
+        const body = document.body;
+        const link = document.getElementById('modo-toggle');
+
+        body.classList.toggle('dark-mode');
+
+        link.textContent = body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+    }
+</script>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gimnasio Fit | Blog</title>
+  <link rel="stylesheet" href="assets/Styles/styles.css">
+</head>
+
+<body>
+  <!-- Menu -->
+  <header>
+    <nav class="mega-menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="contacto.html">Contactenos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#" id="modo-toggle" onclick="toggleDarkMode()">Modo Oscuro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- FILTROS -->
+  <input type="radio" name="tag" id="tag-todos" checked>
+  <input type="radio" name="tag" id="tag-nutricion">
+  <input type="radio" name="tag" id="tag-entrenamiento">
+  <input type="radio" name="tag" id="tag-salud">
+
+  <div class="container">
+    <div class="filters">
+      <div class="filter-group">
+        <label for="tag-todos">Todos</label>
+        <label for="tag-nutricion">Nutrición</label>
+        <label for="tag-entrenamiento">Entrenamiento</label>
+        <label for="tag-salud">Salud</label>
+      </div>
+    </div>
+
+    <!-- BLOG GRID (6 PUBLICACIONES) -->
+    <div class="blog-grid">
+      <!-- Publicación 1 -->
+      <article class="blog-card" data-tag="nutricion">
+        <img
+          src="assets/images/b1.jpg"
+          alt="Superalimentos">
+        <div class="card-content">
+          <span class="tag tag-nutricion">Nutrición</span>
+          <h2>Los Superalimentos del 2023</h2>
+          <p>Descubre qué alimentos están revolucionando la nutrición deportiva este año y cómo incorporarlos a tu
+            dieta.</p>
+        </div>
+        <!-- Comentarios -->
+        <div class="post-comments">
+          <h3>Comentarios</h3>
+          <div class="comment">
+            <div class="comment-avatar" data-initial="ML"></div>
+            <div class="comment-content">
+              <h4>María López</h4>
+              <p>¡Increíble lista! Ya estoy usando la chía y la maca en mis desayunos.</p>
+            </div>
+          </div>
+          <div class="comment">
+            <div class="comment-avatar" data-initial="CR"></div>
+            <div class="comment-content">
+              <h4>Carlos Ruiz</h4>
+              <p>¿Dónde puedo comprar espirulina orgánica?</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Publicación 2 -->
+      <article class="blog-card" data-tag="entrenamiento">
+        <img
+          src="assets/images/b2.jpg"
+          alt="Rutina HIIT">
+        <div class="card-content">
+          <span class="tag tag-entrenamiento">Entrenamiento</span>
+          <h2>HIIT en Casa: 20 Minutos</h2>
+          <p>Una rutina intensa para quemar grasa sin equipamiento. Perfecta para hacer en espacios pequeños.</p>
+        </div>
+        <!-- Comentarios -->
+        <div class="post-comments">
+          <h3>Comentarios</h3>
+          <div class="comment">
+            <div class="comment-avatar" data-initial="AP"></div>
+            <div class="comment-content">
+              <h4>Ana Pérez</h4>
+              <p>La hice ayer y hoy no puedo moverme... ¡pero me encantó!</p>
+            </div>
+          </div>
+          <div class="comment">
+            <div class="comment-avatar" data-initial="JG"></div>
+            <div class="comment-content">
+              <h4>José González</h4>
+              <p>¿Se puede adaptar para principiantes?</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Publicación 3 -->
+      <article class="blog-card" data-tag="salud">
+        <img
+          src="assets/images/b3.jpg"
+          alt="Descanso">
+        <div class="card-content">
+          <span class="tag tag-salud">Salud</span>
+          <h2>La Importancia del Descanso</h2>
+          <p>¿Sabías que dormir bien es clave para ganar músculo? Te explicamos cómo optimizar tu sueño.</p>
+        </div>
+        <!-- Comentarios -->
+        <div class="post-comments">
+          <h3>Comentarios</h3>
+          <div class="comment">
+            <div class="comment-avatar" data-initial="VR"></div>
+            <div class="comment-content">
+              <h4>Víctor Ramírez</h4>
+              <p>Nunca le di importancia al descanso hasta que leí esto. ¡Gracias!</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Publicación 4 -->
+      <article class="blog-card" data-tag="nutricion">
+        <img
+          src="assets/images/b4.jpg"
+          alt="Dieta vegana">
+        <div class="card-content">
+          <span class="tag tag-nutricion">Nutrición</span>
+          <h2>Proteínas Vegetales Complejas</h2>
+          <p>Guía definitiva para combinar alimentos vegetales y obtener todos los aminoácidos esenciales.</p>
+        </div>
+        <!-- Comentarios -->
+        <div class="post-comments">
+          <h3>Comentarios</h3>
+          <div class="comment">
+            <div class="comment-avatar" data-initial="SG"></div>
+            <div class="comment-content">
+              <h4>Sofía García</h4>
+              <p>Como vegana, este artículo resolvió todas mis dudas. ¡Compartiré con mi grupo!</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Publicación 5 -->
+      <article class="blog-card" data-tag="entrenamiento">
+        <img
+          src="assets/images/b5.jpg"
+          alt="Yoga">
+        <div class="card-content">
+          <span class="tag tag-entrenamiento">Entrenamiento</span>
+          <h2>Yoga para Principiantes</h2>
+          <p>5 posturas esenciales para empezar en el mundo del yoga y mejorar tu flexibilidad.</p>
+        </div>
+        <!-- Comentarios -->
+        <div class="post-comments">
+          <h3>Comentarios</h3>
+          <div class="comment">
+            <div class="comment-avatar" data-initial="LM"></div>
+            <div class="comment-content">
+              <h4>Lucía Martínez</h4>
+              <p>Justo lo que necesitaba para empezar. ¿Recomiendas alguna app?</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Publicación 6 -->
+      <article class="blog-card" data-tag="nutricion">
+        <img
+          src="assets/images/b6.jpg"
+          alt="Desayunos">
+        <div class="card-content">
+          <span class="tag tag-nutricion">Nutrición</span>
+          <h2>Desayunos Proteicos</h2>
+          <p>Ideas rápidas y deliciosas para empezar el día con energía y suficiente proteína.</p>
+        </div>
+        <!-- Comentarios -->
+        <div class="post-comments">
+          <h3>Comentarios</h3>
+          <div class="comment">
+            <div class="comment-avatar" data-initial="RM"></div>
+            <div class="comment-content">
+              <h4>Raúl Méndez</h4>
+              <p>El batido de avena y proteína es mi favorito. ¡Lo preparo cada mañana!</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- ASIDE -->
+    <aside>
+      <h3>Artículos Populares</h3>
+      <div class="popular-post">
+        <img
+          src="assets/images/b7.jpg"
+          alt="Post popular">
+        <div>
+          <h4>Rutina Full Body</h4>
+          <p>3 días a la semana</p>
+        </div>
+      </div>
+      <div class="popular-post">
+        <img
+          src="assets/images/b8.jpg"
+          alt="Post popular">
+        <div>
+          <h4>Desayunos Proteicos</h4>
+          <p>Ideas fáciles y rápidas</p>
+        </div>
+      </div>
+
+      <h3>Newsletter</h3>
+      <p>¡Suscríbete para recibir consejos semanales!</p>
+      <input type="email" placeholder="Tu correo"
+        style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+      <button
+        style="background: var(--color-primary); color: white; border: none; padding: 0.5rem 1rem; width: 100%; cursor: pointer; border-radius: 4px;">Suscribirme</button>
+    </aside>
+  </div>
+  <!-- Pie de página -->
+  <footer>
+    <aside class="newsletter">
+      <form>
+        <label for="email">Suscribite:</label>
+        <input type="email" id="email" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </aside>
+    <aside class="redes">
+      <h1>Siguenos en: </h1>
+      <a href="https://instagram.com">. Instagram</a>
+      <a href="https://www.facebook.com/">. Facebook</a>
+    </aside>
+    <aside class="mapa">
+      <iframe src="https://www.openstreetmap.org/export/embed.html" width="300" height="200"></iframe>
+    </aside>
+  </footer>
+</body>
+<script>
+  function toggleDarkMode() {
+    const body = document.body;
+    const link = document.getElementById('modo-toggle');
+
+    body.classList.toggle('dark-mode');
+
+    link.textContent = body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+  }
+</script>
+
+</html>

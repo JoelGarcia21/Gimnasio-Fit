@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gimnasio Fit</title>
+  <link rel="stylesheet" href="/assets/Styles/styles.css">
+</head>
+
+<body>
+  <!-- Menu -->
+  <header>
+    <nav class="mega-menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="contacto.html">Contactenos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#" id="modo-toggle" onclick="toggleDarkMode()">Modo Oscuro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero con video de fondo -->
+  <section class="hero">
+    <video autoplay muted loop id="videoFondo">
+      <source src="/assets/videos/Tvideo.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+    <div class="overlay">
+      <h1 class="animado">¡Entrena con los mejores!</h1>
+    </div>
+  </section>
+
+  <!-- Clases destacadas -->
+  <section id="clases" class="clases-destacadas">
+    <article class="card">
+      <h3>Musculación</h3>
+      <p>Fortalecé tus músculos con rutinas personalizadas y acompañamiento profesional.</p>
+      <a href="clases.html" class="btn">Unirse ahora</a>
+    </article>
+
+    <article class="card">
+      <h3>Yoga</h3>
+      <p>Conectá cuerpo y mente con clases de yoga para todos los niveles.</p>
+      <a href="clases.html" class="btn">Unirse ahora</a>
+    </article>
+
+    <article class="card">
+      <h3>Spinning</h3>
+      <p>Entrenamiento cardiovascular intenso con buena música y motivación.</p>
+      <a href="clases.html" class="btn">Unirse ahora</a>
+    </article>
+  </section>
+
+  <!-- Contador animado -->
+  <section class="contador">
+    <h2><span class="numero">500</span> Socios Satisfechos</h2>
+  </section>
+
+  <!-- Carrusel de testimonios solo CSS -->
+  <section class="testimonios">
+    <h2>Lo que dicen nuestros socios</h2>
+    <div class="carrusel-simple">
+      <input type="radio" name="testimonio" id="t1" checked>
+      <input type="radio" name="testimonio" id="t2">
+      <input type="radio" name="testimonio" id="t3">
+      <input type="radio" name="testimonio" id="t4">
+      <input type="radio" name="testimonio" id="t5">
+
+      <!-- Testimonios -->
+      <div class="slide">
+        <blockquote>"¡Increíble experiencia! Volveré seguro."</blockquote>
+        <p>- Carlos M.</p>
+      </div>
+      <div class="slide">
+        <blockquote>"El mejor servicio que he recibido."</blockquote>
+        <p>- Laura R.</p>
+      </div>
+      <div class="slide">
+        <blockquote>"Superó todas mis expectativas."</blockquote>
+        <p>- Diego S.</p>
+      </div>
+      <div class="slide">
+        <blockquote>"Profesionales y atentos."</blockquote>
+        <p>- Sofía P.</p>
+      </div>
+      <div class="slide">
+        <blockquote>"Recomendado al 100%."</blockquote>
+        <p>- Andrés L.</p>
+      </div>
+
+      <!-- Controles básicos -->
+      <div class="puntos">
+        <label for="t1"></label>
+        <label for="t2"></label>
+        <label for="t3"></label>
+        <label for="t4"></label>
+        <label for="t5"></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <aside class="newsletter">
+      <form>
+        <label for="email">Suscribite:</label>
+        <input type="email" id="email" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </aside>
+    <aside class="redes">
+      <h1>Siguenos en: </h1>
+      <a href="https://instagram.com">. Instagram</a>
+      <a href="https://www.facebook.com/">. Facebook</a>
+    </aside>
+    <aside class="mapa">
+      <iframe src="https://www.openstreetmap.org/export/embed.html" width="300" height="200"></iframe>
+    </aside>
+  </footer>
+</body>
+<script>
+  function toggleDarkMode() {
+    const body = document.body;
+    const link = document.getElementById('modo-toggle');
+
+    body.classList.toggle('dark-mode');
+
+    link.textContent = body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+  }
+</script>
+
+</html>
