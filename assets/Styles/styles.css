@@ -375,7 +375,7 @@ footer aside {
 }
 
 .contenedor-filtros label {
-  display: inline-flex;
+  display: inline-block;
 
 }
 
@@ -529,7 +529,6 @@ td:first-child {
 table {
   animation: fadeIn 0.6s ease-out forwards;
 }
-
 
 #musculacion:checked~.galeria [data-categoria]:not([data-categoria="musculacion"]),
 #crossfit:checked~.galeria [data-categoria]:not([data-categoria="crossfit"]),
