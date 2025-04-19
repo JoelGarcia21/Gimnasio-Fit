@@ -8,13 +8,15 @@
   --color-dark: #2c3e50;
   --fondo: #f0f0f0;
   --texto: #333;
-  --blanco: #fff;
+  --blanco: #f3ecec;
+  --card: #e0e0e0;
 }
 
 body.dark-mode {
   --fondo: #121212;
   --texto: #e0e0e0;
-  --blanco: #1a1a1a;
+  --blanco: #272626;
+  --card: #686868;
 }
 
 body {
@@ -25,13 +27,19 @@ body {
   font-family: sans-serif;
   background: var(--fondo);
   color: var(--texto);
+  max-width:auto;
   min-height: 100vh;
+
 }
 
 /* Menu */
 header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   background: var(--color-principal);
   padding: 30px;
+  width: 100%;
 }
 
 nav ul {
@@ -40,18 +48,24 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  
 }
 
 nav li {
   margin: 0 1em;
 }
 
-nav a {
-  color: var(--blanco);
+nav a.nav-link {
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
+.mega-menu a{
+  font-family: sans-serif;
+  color: white;
+  font: bold;
+}
 /* Hero */
 .hero {
   position: relative;
@@ -94,6 +108,10 @@ nav a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+main{
+  background: var(--fondo);
+  color: var(--texto);
 }
 
 /* Clases destacadas */
@@ -138,69 +156,20 @@ nav a {
 
 /* Contador */
 .contador {
-  text-align: center;
+  align-items: center;
   font-family: Arial, sans-serif;
+  
 }
 
-.numero {
+.contador p {
   display: inline-block;
   position: relative;
-  font-size: 45px;
+  font-size: 35px;
   font-weight: bold;
   color: #ff5722;
   margin-right: 30px;
 }
 
-.numero::before {
-  content: "500";
-  /* Valor inicial */
-  position: absolute;
-  left: 0;
-  animation: cambiar-numeros 4s steps(5) forwards;
-}
-
-/* Definimos los números que se mostrarán */
-@keyframes cambiar-numeros {
-  0% {
-    content: "500+";
-  }
-
-  10% {
-    content: "543+";
-  }
-
-  20% {
-    content: "560+";
-  }
-
-  30% {
-    content: "597+";
-  }
-
-  40% {
-    content: "650+";
-  }
-
-  50% {
-    content: "696+";
-  }
-
-  60% {
-    content: "729+";
-  }
-
-  70% {
-    content: "779+";
-  }
-
-  80% {
-    content: "802+";
-  }
-
-  100% {
-    content: "859+";
-  }
-}
 
 /* Oculta el número original */
 .numero {
@@ -211,85 +180,37 @@ nav a {
   visibility: visible;
 }
 
-/* Testimonios */
-.testimonios {
-  max-width: 600px;
+/* Carrusel */
+.testimonios h2{
+  color: #ff5722;
+  text-align: center;
+  font-weight: bold;
+}
+.carousel {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  padding: 30px;
+  
+}
+
+.carousel-item {
   text-align: center;
 }
 
-.slide {
-  display: none;
-  padding: 20px;
-  background: var(--fondo);
-  border-radius: 8px;
-  margin: 15px 0;
-}
-
-blockquote {
-  font-style: italic;
+.carousel-item blockquote {
   font-size: 20px;
-  margin-bottom: 5px;
+  font-style: italic;
+  margin-bottom: 10px;
 }
 
-.puntos {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+/* Estilo de los controles de carrusel */
+.testimonios button{
+  background-color: #ff5722;
 }
 
-.puntos label {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ddd;
-  cursor: pointer;
-}
-
-/* Mostrar slide activo */
-#t1:checked~.slide:nth-child(6),
-#t2:checked~.slide:nth-child(7),
-#t3:checked~.slide:nth-child(8),
-#t4:checked~.slide:nth-child(9),
-#t5:checked~.slide:nth-child(10) {
-  display: block;
-}
-
-/* Punto activo */
-#t1:checked~.puntos label:nth-child(1),
-#t2:checked~.puntos label:nth-child(2),
-#t3:checked~.puntos label:nth-child(3),
-#t4:checked~.puntos label:nth-child(4),
-#t5:checked~.puntos label:nth-child(5) {
-  background: #ff6b35;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-/* Estilo para los puntos de control */
-.controles {
-  margin-top: 1rem;
-}
-
-.controles label {
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: #ccc;
-  margin: 0 0.3rem;
-}
-
-#t1:checked~.controles label[for="t1"],
-#t2:checked~.controles label[for="t2"] {
-  color: #ff5722;
-}
-
-/* Ocultar radios */
-input[type="radio"] {
-  display: none;
+.testimonios .carousel-indicators button {
+  background-color: #ff6b35; /* Color de los puntos de indicadores */
+  border-color: #ff6b35; /* Borde de los puntos */
 }
 
 /* Footer */
@@ -301,7 +222,6 @@ footer {
   color: white;
   padding: 10px;
   margin-top: auto;
-
 }
 
 footer aside {
@@ -456,13 +376,15 @@ footer aside {
 .clase:hover .clase-info {
   bottom: 0;
 }
+.filter-group label:hover{
+  background-color: var(--color-principal);
+}
 
 /* Tabla de horarios */
 .horarios {
   background: var(--blanco);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
   margin-left: 0px;
 }
@@ -562,10 +484,15 @@ table {
 
 /* ESTILOS ENTRENADORES */
 .entrenadores-container {
-  max-width: 1200px;
-  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 0;
   padding: 1rem;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fondo);
 }
 
 .entrenadores-grid {
@@ -591,7 +518,6 @@ table {
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-
 
 }
 
@@ -652,7 +578,7 @@ table {
 .barra-habilidad {
   height: 10px;
   border-radius: 20px;
-  background-color: var(--blanco);
+  background-color: white;
   position: relative;
   transition: width 1.5s ease-out;
 }
@@ -714,7 +640,7 @@ table {
 
 /* ESTILOS FORMULARIO */
 .form-container {
-  background: #474444;
+  background-color: #474444;
   color: white;
   border-radius: 15px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
@@ -1029,7 +955,11 @@ textarea:invalid~.error-message {
 }
 
 .planes-contenedor {
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  padding: 0;
+  margin: 0;
 }
 
 #filtro-mensual:checked~.planes-contenedor .contenedor-filtros label[for="filtro-mensual"],
@@ -1122,18 +1052,20 @@ textarea:invalid~.error-message {
 
 /*ESTILOS DEL BLOG*/
 
-.container {
-  max-width: 100%;
-  margin: 0 auto;
+.container-blog {
+  
   padding: 20px;
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+  justify-content: center;
+  background-color: var(--fondo);
 }
 
 /* FILTROS */
 .filters {
-  background: var(--fondo);
+  color: var(--texto);
+  background: var(--blanco);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px var(--color-dark);
@@ -1159,7 +1091,7 @@ textarea:invalid~.error-message {
 
 .filter-group label {
   padding: 0.5rem 1.5rem;
-  background: var(--fondo);
+  background: var(--blanco);
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s;
@@ -1172,22 +1104,23 @@ textarea:invalid~.error-message {
 
 /* BLOG GRID */
 .blog-grid {
+  color: var(--texto);
+  background-color: var(--blanco);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
 }
 
 .blog-card {
-  background-color: var(--fondo);
+  background-color: var(--blanco);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px var(--texto)
-  
 }
 
 .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px var(--color-principal)
 }
 
 .blog-card img {
@@ -1230,8 +1163,10 @@ textarea:invalid~.error-message {
 /* COMENTARIOS */
 .post-comments {
   padding: 1.5rem;
-  background: var(--fondo);
+  background: var(--blanco);
   border-top: 1px solid var(--fondo);
+  display: flex;
+  flex-direction: column;
 }
 
 .post-comments h3 {
@@ -1242,10 +1177,17 @@ textarea:invalid~.error-message {
 
 .comment {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
   margin-bottom: 1.5rem;
 }
 
+.comment-content{
+  display: flex;
+  align-items: center;
+}
+.comment-text{
+  padding-left: 0.5rem;
+}
 .comment-avatar {
   width: 40px;
   height: 40px;
@@ -1253,6 +1195,9 @@ textarea:invalid~.error-message {
   background: var(--color-primary);
   position: relative;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .comment-avatar::before {
@@ -1263,43 +1208,73 @@ textarea:invalid~.error-message {
   transform: translate(-50%, -50%);
   color: var(--texto);
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.comment-content {
-  flex: 1;
+.comment-content h4, .comment-content i, .comment .comment-avatar{
+  display: inline-block;
 }
 
 .comment h4 {
-  margin: 0 0 0.25rem 0;
+  
   color: var(--texto);
   font-size: 0.9rem;
+ 
 }
 
 .comment p {
-  margin: 0;
+ 
   font-size: 0.85rem;
   color: var(--texto);
+  
 }
 
+.btn-responder,
+.btn-destacar,
+.btn-publicar-respuesta {
+  background: none;
+  border: none;
+  color: var(--color-principal); 
+  cursor: pointer;
+  margin:0;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-size: 0.90rem;
+  
+}
+.comment-responses{
+  padding: 0.80rem;
+  
+  color:#0e0c0c;
+}
+
+.comment-response p{
+  background-color: var(--card);
+  padding: 0.80rem;
+  border-radius: 1rem;
+}
 /* ASIDE */
 aside {
-  background: var(--fondo);
+  background: var(--blanco);
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
+  box-shadow: 0 2px 4px var(--color-dark);
+  border-top: 1px 
+  
 }
 
 aside h3 {
   margin-top: 0;
   border-bottom: 2px solid var(--color-primary);
   padding-bottom: 0.5rem;
-  color: var(--color-dark);
+  color: var(--texto);
 }
 
 .popular-post {
   display: flex;
   gap: 1rem;
+  color: var(--texto);
   margin-bottom: 1rem;
   align-items: center;
 }
@@ -1362,30 +1337,39 @@ aside {
 }
 
 
-#tag-todos:checked~.container .blog-grid .blog-card {
+
+@media (max-width: 768px) {
+  .container-blog {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+}
+
+#tag-todos:checked~.container-blog .blog-grid .blog-card {
   display: block;
 }
 
-#tag-nutricion:checked~.container .blog-grid .blog-card {
+#tag-nutricion:checked~.container-blog .blog-grid .blog-card {
   display: none;
 }
 
-#tag-nutricion:checked~.container .blog-grid .blog-card[data-tag*="nutricion"] {
+#tag-nutricion:checked~.container-blog .blog-grid .blog-card[data-tag*="nutricion"] {
   display: block;
 }
 
-#tag-entrenamiento:checked~.container .blog-grid .blog-card {
+#tag-entrenamiento:checked~.container-blog .blog-grid .blog-card {
   display: none;
 }
 
-#tag-entrenamiento:checked~.container .blog-grid .blog-card[data-tag*="entrenamiento"] {
+#tag-entrenamiento:checked~.container-blog .blog-grid .blog-card[data-tag*="entrenamiento"] {
   display: block;
 }
 
-#tag-salud:checked~.container .blog-grid .blog-card {
+#tag-salud:checked~.container-blog .blog-grid .blog-card {
   display: none;
 }
 
-#tag-salud:checked~.container .blog-grid .blog-card[data-tag*="salud"] {
+#tag-salud:checked~.container-blog .blog-grid .blog-card[data-tag*="salud"] {
   display: block;
 }

@@ -6,31 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gimnasio Fit | Blog</title>
   <link rel="stylesheet" href="assets/Styles/styles.css">
+
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+  <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 
 <body>
   <!-- Menu -->
   <header>
-    <nav class="mega-menu">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="clases.html">Clases</a></li>
-        <li><a href="entrenadores.html">Entrenadores</a></li>
-        <li><a href="precios.html">Precios</a></li>
-        <li><a href="contacto.html">Contactenos</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#" id="modo-toggle" onclick="toggleDarkMode()">Modo Oscuro</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg mega-menu">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenedor de enlaces -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="clases.html">Clases</a></li>
+            <li class="nav-item"><a class="nav-link" href="entrenadores.html">Entrenadores</a></li>
+            <li class="nav-item"><a class="nav-link" href="precios.html">Precios</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctenos</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="modo-toggle" onclick="changeDarkMode()">Modo
+                Oscuro</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
   <!-- FILTROS -->
-  <input type="radio" name="tag" id="tag-todos" checked>
-  <input type="radio" name="tag" id="tag-nutricion">
-  <input type="radio" name="tag" id="tag-entrenamiento">
-  <input type="radio" name="tag" id="tag-salud">
+  <input type="radio" name="tag" id="tag-todos" checked class="d-none">
+  <input type="radio" name="tag" id="tag-nutricion" class="d-none">
+  <input type="radio" name="tag" id="tag-entrenamiento" class="d-none">
+  <input type="radio" name="tag" id="tag-salud" class="d-none">
 
-  <div class="container">
+  <div class="container-blog">
     <div class="filters">
       <div class="filter-group">
         <label for="tag-todos">Todos</label>
@@ -44,9 +63,7 @@
     <div class="blog-grid">
       <!-- Publicación 1 -->
       <article class="blog-card" data-tag="nutricion">
-        <img
-          src="assets/images/b1.jpg"
-          alt="Superalimentos">
+        <img src="assets/images/b1.jpg" alt="Superalimentos">
         <div class="card-content">
           <span class="tag tag-nutricion">Nutrición</span>
           <h2>Los Superalimentos del 2023</h2>
@@ -57,203 +74,341 @@
         <div class="post-comments">
           <h3>Comentarios</h3>
           <div class="comment">
-            <div class="comment-avatar" data-initial="ML"></div>
             <div class="comment-content">
-              <h4>María López</h4>
-              <p>¡Increíble lista! Ya estoy usando la chía y la maca en mis desayunos.</p>
+              <div class="comment-avatar" data-initial="ML"></div>
+              <div class="comment-text">
+                <h4>María López</h4>
+                <i class="bi bi-star-fill text-warning d-none ms-2" title="Destacado"></i>
+                <p>¡Increíble lista! Ya estoy usando la chía y la maca en mis desayunos.</p>
+              </div>
             </div>
+            <div class="comment-actions">
+              <button class="btn-responder">Responder</button>
+              <button class="btn-destacar">Destacar</button>
+            </div>
+            <div class="comment-reply-box d-none">
+              <textarea class="reply-textarea" placeholder="Escribe tu respuesta..."></textarea>
+              <button class="btn-publicar-respuesta">Publicar</button>
+            </div>
+            <div class="comment-responses"></div>
           </div>
           <div class="comment">
-            <div class="comment-avatar" data-initial="CR"></div>
             <div class="comment-content">
-              <h4>Carlos Ruiz</h4>
-              <p>¿Dónde puedo comprar espirulina orgánica?</p>
+              <div class="comment-avatar" data-initial="CR"></div>
+              <div class="comment-text">
+                <h4>Carlos Ruiz</h4>
+                <i class="bi bi-star-fill text-warning d-none ms-2" title="Destacado"></i>
+                <p>¿Dónde puedo comprar espirulina orgánica?</p>
+              </div>
             </div>
+            <div class="comment-actions">
+              <button class="btn-responder">Responder</button>
+              <button class="btn-destacar">Destacar</button>
+            </div>
+            <div class="comment-reply-box d-none">
+              <textarea class="reply-textarea" placeholder="Escribe tu respuesta..."></textarea>
+              <button class="btn-publicar-respuesta">Publicar</button>
+            </div>
+            <div class="comment-responses"></div>
           </div>
         </div>
       </article>
 
       <!-- Publicación 2 -->
-      <article class="blog-card" data-tag="entrenamiento">
-        <img
-          src="assets/images/b2.jpg"
-          alt="Rutina HIIT">
-        <div class="card-content">
-          <span class="tag tag-entrenamiento">Entrenamiento</span>
-          <h2>HIIT en Casa: 20 Minutos</h2>
-          <p>Una rutina intensa para quemar grasa sin equipamiento. Perfecta para hacer en espacios pequeños.</p>
+<article class="blog-card" data-tag="entrenamiento">
+  <img src="assets/images/b2.jpg" alt="Rutina HIIT">
+  <div class="card-content">
+    <span class="tag tag-entrenamiento">Entrenamiento</span>
+    <h2>HIIT en Casa: 20 Minutos</h2>
+    <p>Una rutina intensa para quemar grasa sin equipamiento. Perfecta para hacer en espacios pequeños.</p>
+  </div>
+  <!-- Comentarios -->
+  <div class="post-comments">
+    <h3>Comentarios</h3>
+    <div class="comment">
+      <div class="comment-content">
+        <div class="comment-avatar" data-initial="AP"></div>
+        <div class="comment-text">
+          <h4>Ana Pérez</h4>
+          <i class="bi bi-star-fill text-warning d-none ms-2" title="Destacado"></i>
+          <p>La hice ayer y hoy no puedo moverme... ¡pero me encantó!</p>
         </div>
-        <!-- Comentarios -->
-        <div class="post-comments">
-          <h3>Comentarios</h3>
-          <div class="comment">
-            <div class="comment-avatar" data-initial="AP"></div>
-            <div class="comment-content">
-              <h4>Ana Pérez</h4>
-              <p>La hice ayer y hoy no puedo moverme... ¡pero me encantó!</p>
-            </div>
-          </div>
-          <div class="comment">
-            <div class="comment-avatar" data-initial="JG"></div>
-            <div class="comment-content">
-              <h4>José González</h4>
-              <p>¿Se puede adaptar para principiantes?</p>
-            </div>
-          </div>
+      </div>
+      <div class="comment-actions">
+        <button class="btn-responder">Responder</button>
+        <button class="btn-destacar">Destacar</button>
+      </div>
+      <div class="comment-reply-box d-none">
+        <textarea class="reply-textarea" placeholder="Escribe tu respuesta..."></textarea>
+        <button class="btn-publicar-respuesta">Publicar</button>
+      </div>
+      <div class="comment-responses"></div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-content">
+        <div class="comment-avatar" data-initial="JG"></div>
+        <div class="comment-text">
+          <h4>José González</h4>
+          <i class="bi bi-star-fill text-warning d-none ms-2" title="Destacado"></i>
+          <p>¿Se puede adaptar para principiantes?</p>
         </div>
-      </article>
+      </div>
+      <div class="comment-actions">
+        <button class="btn-responder">Responder</button>
+        <button class="btn-destacar">Destacar</button>
+      </div>
+      <div class="comment-reply-box d-none">
+        <textarea class="reply-textarea" placeholder="Escribe tu respuesta..."></textarea>
+        <button class="btn-publicar-respuesta">Publicar</button>
+      </div>
+      <div class="comment-responses"></div>
+    </div>
+  </div>
+</article>
 
       <!-- Publicación 3 -->
-      <article class="blog-card" data-tag="salud">
-        <img
-          src="assets/images/b3.jpg"
-          alt="Descanso">
-        <div class="card-content">
-          <span class="tag tag-salud">Salud</span>
-          <h2>La Importancia del Descanso</h2>
-          <p>¿Sabías que dormir bien es clave para ganar músculo? Te explicamos cómo optimizar tu sueño.</p>
+<article class="blog-card" data-tag="salud">
+  <img src="assets/images/b3.jpg" alt="Descanso">
+  <div class="card-content">
+    <span class="tag tag-salud">Salud</span>
+    <h2>La Importancia del Descanso</h2>
+    <p>¿Sabías que dormir bien es clave para ganar músculo? Te explicamos cómo optimizar tu sueño.</p>
+  </div>
+  <!-- Comentarios -->
+  <div class="post-comments">
+    <h3>Comentarios</h3>
+    <div class="comment">
+      <div class="comment-content">
+        <div class="comment-avatar" data-initial="VR"></div>
+        <div class="comment-text">
+          <h4>Víctor Ramírez</h4>
+          <i class="bi bi-star-fill text-warning d-none ms-2" title="Destacado"></i>
+          <p>Nunca le di importancia al descanso hasta que leí esto. ¡Gracias!</p>
         </div>
-        <!-- Comentarios -->
-        <div class="post-comments">
-          <h3>Comentarios</h3>
-          <div class="comment">
-            <div class="comment-avatar" data-initial="VR"></div>
-            <div class="comment-content">
-              <h4>Víctor Ramírez</h4>
-              <p>Nunca le di importancia al descanso hasta que leí esto. ¡Gracias!</p>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
+      <div class="comment-actions">
+        <button class="btn-responder">Responder</button>
+        <button class="btn-destacar">Destacar</button>
+      </div>
+      <div class="comment-reply-box d-none">
+        <textarea class="reply-textarea" placeholder="Escribe tu respuesta..."></textarea>
+        <button class="btn-publicar-respuesta">Publicar</button>
+      </div>
+      <div class="comment-responses"></div>
+    </div>
+  </div>
+</article>
 
-      <!-- Publicación 4 -->
-      <article class="blog-card" data-tag="nutricion">
-        <img
-          src="assets/images/b4.jpg"
-          alt="Dieta vegana">
-        <div class="card-content">
-          <span class="tag tag-nutricion">Nutrición</span>
-          <h2>Proteínas Vegetales Complejas</h2>
-          <p>Guía definitiva para combinar alimentos vegetales y obtener todos los aminoácidos esenciales.</p>
+     <!-- Publicación 4 -->
+<article class="blog-card" data-tag="nutricion">
+  <img src="assets/images/b4.jpg" alt="Dieta vegana">
+  <div class="card-content">
+    <span class="tag tag-nutricion">Nutrición</span>
+    <h2>Proteínas Vegetales Complejas</h2>
+    <p>Guía definitiva para combinar alimentos vegetales y obtener todos los aminoácidos esenciales.</p>
+  </div>
+  <!-- Comentarios -->
+  <div class="post-comments">
+    <h3>Comentarios</h3>
+    <div class="comment">
+      <div class="comment-content">
+        <div class="comment-avatar" data-initial="SG"></div>
+        <div class="comment-text">
+          <h4>Sofía García</h4>
+          <i class="bi bi-star-fill text-warning d-none ms-2" title="Destacado"></i>
+          <p>Como vegana, este artículo resolvió todas mis dudas. ¡Compartiré con mi grupo!</p>
         </div>
-        <!-- Comentarios -->
-        <div class="post-comments">
-          <h3>Comentarios</h3>
-          <div class="comment">
-            <div class="comment-avatar" data-initial="SG"></div>
-            <div class="comment-content">
-              <h4>Sofía García</h4>
-              <p>Como vegana, este artículo resolvió todas mis dudas. ¡Compartiré con mi grupo!</p>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
+      <div class="comment-actions">
+        <button class="btn-responder">Responder</button>
+        <button class="btn-destacar">Destacar</button>
+      </div>
+      <div class="comment-reply-box d-none">
+        <textarea class="reply-textarea" placeholder="Escribe tu respuesta..."></textarea>
+        <button class="btn-publicar-respuesta">Publicar</button>
+      </div>
+      <div class="comment-responses"></div>
+    </div>
+  </div>
+</article>
 
       <!-- Publicación 5 -->
-      <article class="blog-card" data-tag="entrenamiento">
-        <img
-          src="assets/images/b5.jpg"
-          alt="Yoga">
-        <div class="card-content">
-          <span class="tag tag-entrenamiento">Entrenamiento</span>
-          <h2>Yoga para Principiantes</h2>
-          <p>5 posturas esenciales para empezar en el mundo del yoga y mejorar tu flexibilidad.</p>
+<article class="blog-card" data-tag="entrenamiento">
+  <img src="assets/images/b5.jpg" alt="Yoga">
+  <div class="card-content">
+    <span class="tag tag-entrenamiento">Entrenamiento</span>
+    <h2>Yoga para Principiantes</h2>
+    <p>5 posturas esenciales para empezar en el mundo del yoga y mejorar tu flexibilidad.</p>
+  </div>
+  <!-- Comentarios -->
+  <div class="post-comments">
+    <h3>Comentarios</h3>
+    <div class="comment">
+      <div class="comment-content">
+        <div class="comment-avatar" data-initial="LM"></div>
+        <div class="comment-text">
+          <h4>Lucía Martínez</h4>
+          <i class="bi bi-star-fill text-warning d-none ms-2" title="Destacado"></i>
+          <p>Justo lo que necesitaba para empezar. ¿Recomiendas alguna app?</p>
         </div>
-        <!-- Comentarios -->
-        <div class="post-comments">
-          <h3>Comentarios</h3>
-          <div class="comment">
-            <div class="comment-avatar" data-initial="LM"></div>
-            <div class="comment-content">
-              <h4>Lucía Martínez</h4>
-              <p>Justo lo que necesitaba para empezar. ¿Recomiendas alguna app?</p>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
+      <div class="comment-actions">
+        <button class="btn-responder">Responder</button>
+        <button class="btn-destacar">Destacar</button>
+      </div>
+      <div class="comment-reply-box d-none">
+        <textarea class="reply-textarea" placeholder="Escribe tu respuesta..."></textarea>
+        <button class="btn-publicar-respuesta">Publicar</button>
+      </div>
+      <div class="comment-responses"></div>
+    </div>
+  </div>
+</article>
 
       <!-- Publicación 6 -->
-      <article class="blog-card" data-tag="nutricion">
-        <img
-          src="assets/images/b6.jpg"
-          alt="Desayunos">
-        <div class="card-content">
-          <span class="tag tag-nutricion">Nutrición</span>
-          <h2>Desayunos Proteicos</h2>
-          <p>Ideas rápidas y deliciosas para empezar el día con energía y suficiente proteína.</p>
+<article class="blog-card" data-tag="nutricion">
+  <img src="assets/images/b6.jpg" alt="Desayunos">
+  <div class="card-content">
+    <span class="tag tag-nutricion">Nutrición</span>
+    <h2>Desayunos Proteicos</h2>
+    <p>Ideas rápidas y deliciosas para empezar el día con energía y suficiente proteína.</p>
+  </div>
+  <!-- Comentarios -->
+  <div class="post-comments">
+    <h3>Comentarios</h3>
+    <div class="comment">
+      <div class="comment-content">
+        <div class="comment-avatar" data-initial="RM"></div>
+        <div class="comment-text">
+          <h4>Raúl Méndez</h4>
+          <i class="bi bi-star-fill text-warning d-none ms-2" title="Destacado"></i>
+          <p>El batido de avena y proteína es mi favorito. ¡Lo preparo cada mañana!</p>
         </div>
-        <!-- Comentarios -->
-        <div class="post-comments">
-          <h3>Comentarios</h3>
-          <div class="comment">
-            <div class="comment-avatar" data-initial="RM"></div>
-            <div class="comment-content">
-              <h4>Raúl Méndez</h4>
-              <p>El batido de avena y proteína es mi favorito. ¡Lo preparo cada mañana!</p>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
+      <div class="comment-actions">
+        <button class="btn-responder">Responder</button>
+        <button class="btn-destacar">Destacar</button>
+      </div>
+      <div class="comment-reply-box d-none">
+        <textarea class="reply-textarea" placeholder="Escribe tu respuesta..."></textarea>
+        <button class="btn-publicar-respuesta">Publicar</button>
+      </div>
+      <div class="comment-responses"></div>
+    </div>
+  </div>
+</article>
     </div>
 
     <!-- ASIDE -->
     <aside>
       <h3>Artículos Populares</h3>
       <div class="popular-post">
-        <img
-          src="assets/images/b7.jpg"
-          alt="Post popular">
+        <img src="assets/images/b7.jpg" alt="Post popular">
         <div>
           <h4>Rutina Full Body</h4>
           <p>3 días a la semana</p>
         </div>
       </div>
       <div class="popular-post">
-        <img
-          src="assets/images/b8.jpg"
-          alt="Post popular">
+        <img src="assets/images/b8.jpg" alt="Post popular">
         <div>
           <h4>Desayunos Proteicos</h4>
           <p>Ideas fáciles y rápidas</p>
         </div>
       </div>
 
-      <h3>Newsletter</h3>
-      <p>¡Suscríbete para recibir consejos semanales!</p>
-      <input type="email" placeholder="Tu correo"
-        style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
-      <button
-        style="background: var(--color-primary); color: white; border: none; padding: 0.5rem 1rem; width: 100%; cursor: pointer; border-radius: 4px;">Suscribirme</button>
     </aside>
   </div>
+
+
   <!-- Pie de página -->
-  <footer>
-    <aside class="newsletter">
-      <form>
-        <label for="email">Suscribite:</label>
-        <input type="email" id="email" required>
-        <button type="submit">Enviar</button>
-      </form>
-    </aside>
-    <aside class="redes">
-      <h1>Siguenos en: </h1>
-      <a href="https://instagram.com">. Instagram</a>
-      <a href="https://www.facebook.com/">. Facebook</a>
-    </aside>
-    <aside class="mapa">
-      <iframe src="https://www.openstreetmap.org/export/embed.html" width="300" height="200"></iframe>
-    </aside>
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row">
+
+        <!-- Newsletter -->
+        <div class="col-md-4 mb-4">
+          <h5><i class="bi bi-envelope-fill"></i> Suscribite al boletín</h5>
+          <form id="formNewsletter" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico:</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">Por favor ingresá un correo válido.</div>
+            </div>
+            <button type="submit" class="btn btn-warning">
+              <i class="bi bi-send-fill"></i> Enviar
+              <span class="spinner-border spinner-border-sm d-none" id="spinner" role="status"
+                aria-hidden="true"></span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="col-md-4 mb-4">
+          <h5><i class="bi bi-share-fill"></i> Seguinos</h5>
+          <a href="https://instagram.com" class="d-block text-white">
+            <i class="bi bi-instagram"></i> Instagram
+          </a>
+          <a href="https://facebook.com" class="d-block text-white">
+            <i class="bi bi-facebook"></i> Facebook
+          </a>
+        </div>
+
+        <!-- Mapa -->
+        <div class="col-md-4 mb-4">
+          <h5><i class="bi bi-geo-alt-fill"></i> Encontranos</h5>
+          <iframe src="https://www.openstreetmap.org/export/embed.html" width="100%" height="200" frameborder="0"
+            style="border:1px solid #ccc; border-radius: 10px;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
   </footer>
 </body>
+<script src="assets/js/dark-mode.js"></script>
+<script src="assets/js/footer-form.js"></script>
 <script>
-  function toggleDarkMode() {
-    const body = document.body;
-    const link = document.getElementById('modo-toggle');
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".btn-responder").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const comment = btn.closest(".comment");
+        const replyBox = comment.querySelector(".comment-reply-box");
+        replyBox.classList.toggle("d-none");
+      });
+    });
 
-    body.classList.toggle('dark-mode');
+    document.querySelectorAll(".btn-publicar-respuesta").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const replyBox = btn.closest(".comment-reply-box");
+        const textarea = replyBox.querySelector(".reply-textarea");
+        const respuestaTexto = textarea.value.trim();
+        if (respuestaTexto !== "") {
+          const responsesContainer = replyBox.nextElementSibling;
+          const nuevaRespuesta = document.createElement("div");
+          nuevaRespuesta.className = "comment-response";
+          nuevaRespuesta.innerHTML = `<p><strong>Tú:</strong> ${respuestaTexto}</p>`;
+          responsesContainer.appendChild(nuevaRespuesta);
+          textarea.value = "";
+          replyBox.classList.add("d-none");
+        }
+      });
+    });
 
-    link.textContent = body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
-  }
+    document.querySelectorAll(".btn-destacar").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const comment = btn.closest(".comment");
+        const estrella = comment.querySelector(".bi-star-fill");
+
+        // Toggle la clase 'highlighted' al comentario
+        comment.classList.toggle("highlighted");
+
+        // Muestra u oculta la estrella al mismo tiempo que destacas
+        estrella.classList.toggle("d-none");
+      });
+    });
+  });
 </script>
 
 </html>
