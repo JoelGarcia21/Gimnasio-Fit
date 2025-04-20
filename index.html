@@ -6,11 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gimnasio Fit</title>
   <link rel="stylesheet" href="assets/Styles/styles.css">
- 
-  <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -19,12 +16,13 @@
     <nav class="navbar navbar-expand-lg mega-menu">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Inicio</a>
-  
+
         <!-- Botón hamburguesa -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-  
+
         <!-- Contenedor de enlaces -->
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -33,7 +31,8 @@
             <li class="nav-item"><a class="nav-link" href="precios.html">Precios</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctenos</a></li>
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="#" id="modo-toggle" onclick="changeDarkMode()">Modo Oscuro</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="modo-toggle" onclick="changeDarkMode()">Modo
+                Oscuro</a></li>
           </ul>
         </div>
       </div>
@@ -52,118 +51,122 @@
   </section>
 
   <!-- Clases destacadas -->
-<section id="clases" class="clases-destacadas py-5">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-12 col-md-4">
-        <article class="card h-100 text-center p-3">
-          <h3>Musculación</h3>
-          <p>Fortalecé tus músculos con rutinas personalizadas y acompañamiento profesional.</p>
-          <a href="clases.html" class="btn btn-primary">Unirse ahora</a>
-        </article>
-      </div>
-      <div class="col-12 col-md-4">
-        <article class="card h-100 text-center p-3">
-          <h3>Yoga</h3>
-          <p>Conectá cuerpo y mente con clases de yoga para todos los niveles.</p>
-          <a href="clases.html" class="btn btn-primary">Unirse ahora</a>
-        </article>
-      </div>
-      <div class="col-12 col-md-4">
-        <article class="card h-100 text-center p-3">
-          <h3>Spinning</h3>
-          <p>Entrenamiento cardiovascular intenso con buena música y motivación.</p>
-          <a href="clases.html" class="btn btn-primary">Unirse ahora</a>
-        </article>
+  <section id="clases" class="clases-destacadas py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <article class="card h-100 text-center p-3">
+            <h3>Musculación</h3>
+            <p>Fortalecé tus músculos con rutinas personalizadas y acompañamiento profesional.</p>
+            <a href="clases.html" class="btn btn-primary">Unirse ahora</a>
+          </article>
+        </div>
+        <div class="col-12 col-md-4">
+          <article class="card h-100 text-center p-3">
+            <h3>Yoga</h3>
+            <p>Conectá cuerpo y mente con clases de yoga para todos los niveles.</p>
+            <a href="clases.html" class="btn btn-primary">Unirse ahora</a>
+          </article>
+        </div>
+        <div class="col-12 col-md-4">
+          <article class="card h-100 text-center p-3">
+            <h3>Spinning</h3>
+            <p>Entrenamiento cardiovascular intenso con buena música y motivación.</p>
+            <a href="clases.html" class="btn btn-primary">Unirse ahora</a>
+          </article>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- Contador animado -->
-<section class="contador py-5 bg-light d-flex justify-content-center align-items-center">
-  <div class="text-center">
-    <h2 class="display-4 fw-bold">
-      <span id="contador-socios">0</span>+
-    </h2>
-    <p>Socios Satisfechos</p>
-  </div>
-</section>
+  <!-- Contador animado -->
+  <section class="contador py-5 bg-light d-flex justify-content-center align-items-center">
+    <div class="text-center">
+      <h2 class="display-4 fw-bold">
+        <span id="contador-socios">0</span>+
+      </h2>
+      <p>Socios Satisfechos</p>
+    </div>
+  </section>
 
 
   <!-- Carrusel de testimonios -->
-<section class="testimonios py-5">
-  <h2>Lo que dicen nuestros socios</h2>
+  <section class="testimonios py-5">
+    <h2>Lo que dicen nuestros socios</h2>
 
-  <!-- Carrusel de Bootstrap 5 -->
-  <div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel" data-bs-pause="hover" data-bs-interval="3000">
-    <!-- Indicadores -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <!-- Carrusel de Bootstrap 5 -->
+    <div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel" data-bs-pause="hover"
+      data-bs-interval="3000">
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+
+      <!-- Contenedor de los testimonios -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <blockquote>"¡Increíble experiencia! Volveré seguro."</blockquote>
+          <p>- Carlos M.</p>
+        </div>
+        <div class="carousel-item">
+          <blockquote>"El mejor servicio que he recibido."</blockquote>
+          <p>- Laura R.</p>
+        </div>
+        <div class="carousel-item">
+          <blockquote>"Superó todas mis expectativas."</blockquote>
+          <p>- Diego S.</p>
+        </div>
+        <div class="carousel-item">
+          <blockquote>"Profesionales y atentos."</blockquote>
+          <p>- Sofía P.</p>
+        </div>
+        <div class="carousel-item">
+          <blockquote>"Recomendado al 100%."</blockquote>
+          <p>- Andrés L.</p>
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-
-    <!-- Contenedor de los testimonios -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <blockquote>"¡Increíble experiencia! Volveré seguro."</blockquote>
-        <p>- Carlos M.</p>
-      </div>
-      <div class="carousel-item">
-        <blockquote>"El mejor servicio que he recibido."</blockquote>
-        <p>- Laura R.</p>
-      </div>
-      <div class="carousel-item">
-        <blockquote>"Superó todas mis expectativas."</blockquote>
-        <p>- Diego S.</p>
-      </div>
-      <div class="carousel-item">
-        <blockquote>"Profesionales y atentos."</blockquote>
-        <p>- Sofía P.</p>
-      </div>
-      <div class="carousel-item">
-        <blockquote>"Recomendado al 100%."</blockquote>
-        <p>- Andrés L.</p>
-      </div>
-    </div>
-
-    <!-- Controles -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</section>
+  </section>
 
   <!-- Pie de página -->
   <footer class="bg-dark text-white pt-5 pb-4">
     <div class="container">
       <div class="row">
-  
+
         <!-- Newsletter -->
         <div class="col-md-4 mb-4">
           <h5><i class="bi bi-envelope-fill"></i> Suscribite al boletín</h5>
           <form id="formNewsletter" class="needs-validation" novalidate>
             <div class="mb-3">
+
               <label for="email" class="form-label">Correo electrónico:</label>
-              <input type="email" class="form-control" id="email" required>
+              <input type="email" class="form-control" id="newsletterEmail" required>
               <div class="invalid-feedback">Por favor ingresá un correo válido.</div>
             </div>
             <button type="submit" class="btn btn-warning">
               <i class="bi bi-send-fill"></i> Enviar
-              <span class="spinner-border spinner-border-sm d-none" id="spinner" role="status" aria-hidden="true"></span>
+              <span class="spinner-border spinner-border-sm d-none" id="spinner" role="status"
+                aria-hidden="true"></span>
             </button>
           </form>
         </div>
-  
+
         <!-- Redes Sociales -->
         <div class="col-md-4 mb-4">
           <h5><i class="bi bi-share-fill"></i> Seguinos</h5>
@@ -174,26 +177,25 @@
             <i class="bi bi-facebook"></i> Facebook
           </a>
         </div>
-  
+
         <!-- Mapa -->
         <div class="col-md-4 mb-4">
           <h5><i class="bi bi-geo-alt-fill"></i> Encontranos</h5>
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html"
-            width="100%" height="200" frameborder="0"
-            style="border:1px solid #ccc; border-radius: 10px;"
-            allowfullscreen="" loading="lazy">
+          <iframe src="https://www.openstreetmap.org/export/embed.html" width="100%" height="200" frameborder="0"
+            style="border:1px solid #ccc; border-radius: 10px;" allowfullscreen="" loading="lazy">
           </iframe>
         </div>
-  
+
       </div>
     </div>
   </footer>
 </body>
 <script src="assets/js/dark-mode.js"></script>
 <script src="assets/js/footer-form.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
 <script>
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('#carouselTestimonios').carousel({
       interval: 3000,  // Autoplay cada 5 segundos
       pause: 'hover',  // Pausar al hacer hover
@@ -201,7 +203,7 @@
   });
 </script>
 <script>
- $(document).ready(function () {
+  $(document).ready(function () {
     let target = 859;
     let duration = 4000;
     let interval = 40;
@@ -218,4 +220,5 @@
     }, interval);
   });
 </script>
+
 </html>
